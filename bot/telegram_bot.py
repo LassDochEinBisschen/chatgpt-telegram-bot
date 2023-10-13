@@ -189,7 +189,7 @@ class ChatGPTTelegramBot:
         """
         Resets the conversation.
         """
-        if not await is_allowed(self.config, update, context):
+        if not await is_admin(self.config, update, context):
             logging.warning(f'User {update.message.from_user.name} (id: {update.message.from_user.id}) '
                             f'is not allowed to reset the conversation')
             await self.send_disallowed_message(update, context)
