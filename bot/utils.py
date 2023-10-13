@@ -155,6 +155,7 @@ async def is_allowed(config, update: Update, context: CallbackContext, is_inline
         return True
 
     user_id = update.inline_query.from_user.id if is_inline else update.message.from_user.id
+    print(user_id)
     if is_admin(config, user_id):
         return True
     name = update.inline_query.from_user.name if is_inline else update.message.from_user.name
